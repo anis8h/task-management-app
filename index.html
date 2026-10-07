@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Task Management App</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="app-container">
+
+        <!-- Header -->
+        <header class="app-header">
+            <h1>Task Manager</h1>
+            <p>Organize your tasks and stay productive.</p>
+        </header>
+
+        <!-- Add Task Section -->
+        <section class="task-input-section">
+
+            <input 
+                type="text" 
+                id="taskInput" 
+                placeholder="Enter your task..."
+            >
+
+            <input 
+                type="date" 
+                id="taskDate"
+            >
+            <select id="taskPriority">
+    <option value="high">🔴 High</option>
+    <option value="medium" selected>🟡 Medium</option>
+    <option value="low">🟢 Low</option>
+</select>
+
+<select id="taskCategory">
+    <option value="study">📚 Study</option>
+    <option value="work">💻 Work</option>
+    <option value="personal">🏠 Personal</option>
+    <option value="shopping">🛒 Shopping</option>
+    <option value="other">📌 Other</option>
+</select>
+
+<button id="addTaskBtn">
+    + Add Task
+</button>
+<button id="themeToggle" class="theme-btn">
+    ☀️ Light
+</button>
+        </section>
+
+        <!-- Search & Filter -->
+        <section class="controls">
+
+            <input 
+                type="text" 
+                id="searchInput" 
+                placeholder="Search tasks..."
+            >
+
+            <select id="filterSelect">
+                <option value="all">All Tasks</option>
+                <option value="pending">Pending</option>
+                <option value="completed">Completed</option>
+            </select>
+            <select id="categoryFilter">
+    <option value="all">📂 All Categories</option>
+    <option value="study">📚 Study</option>
+    <option value="work">💻 Work</option>
+    <option value="personal">🏠 Personal</option>
+    <option value="shopping">🛒 Shopping</option>
+    <option value="other">📌 Other</option>
+</select>
+<select id="sortSelect">
+    <option value="default">Sort Tasks</option>
+    <option value="priority">⭐ Priority</option>
+    <option value="date">📅 Due Date</option>
+    <option value="newest">🆕 Newest</option>
+    <option value="oldest">🕐 Oldest</option>
+</select>
+  
+        </section>
+
+        <!-- Statistics -->
+        <section class="stats">
+
+            <div class="stat-card">
+                <h3 id="totalTasks">0</h3>
+                <p>Total</p>
+            </div>
+
+            <div class="stat-card">
+                <h3 id="pendingTasks">0</h3>
+                <p>Pending</p>
+            </div>
+
+            <div class="stat-card">
+                <h3 id="completedTasks">0</h3>
+                <p>Completed</p>
+            </div>
+            <div class="stat-card overdue-stat">
+    <span>⚠️ Overdue</span>
+    <strong id="overdueTasks">0</strong>
+</div>
+            <div class="progress-section">
+<div class="task-summary">
+<button id="clearCompletedBtn" class="clear-completed-btn">
+    🧹 Clear Completed Tasks
+</button>
+<button id="exportTasksBtn" class="export-btn">
+    📥 Export Tasks
+</button>
+
+<button id="importTasksBtn" class="import-btn">
+    📤 Import Tasks
+</button>
+
+<input
+    type="file"
+    id="importTasksInput"
+    accept=".json"
+    style="display: none;"
+>
+    <h3>📊 Task Summary</h3>
+
+    <div class="summary-row">
+        <span>Completion Rate</span>
+        <strong id="completionRate">0%</strong>
+    </div>
+
+    <div class="summary-row">
+        <span>Remaining Tasks</span>
+        <strong id="remainingTasks">0</strong>
+    </div>
+
+</div>
+    <div class="progress-header">
+        <h3>Task Progress</h3>
+        <span id="progressPercent">0%</span>
+    </div>
+
+    <div class="progress-bar">
+        <div id="progressFill"></div>
+    </div>
+
+    <p id="progressText">0 of 0 tasks completed</p>
+
+</div>
+
+        </section>
+
+        <!-- Task List -->
+        <section class="task-section">
+
+            <h2>My Tasks</h2>
+
+            <div id="taskList">
+                <!-- Tasks will appear here -->
+            </div>
+
+            <div id="emptyMessage" class="empty-state">
+    <div class="empty-icon">🕷️</div>
+    <h3>No Tasks Yet</h3>
+    <p>Add your first task and start getting things done!</p>
+</div>
+        </section>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
