@@ -28,6 +28,10 @@ The application helps users create, organize, track, search, filter, sort, and m
 * 📱 Responsive mobile design
 * ✨ Smooth animations and UI effects
 
+## 🌐 Live Demo
+
+[Live Task Management App](https://anis8h.github.io/task-management-app/)
+
 ## 🛠️ Technologies Used
 
 * HTML5
